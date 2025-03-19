@@ -15,9 +15,9 @@ const Navbar = () => {
         <li><a href="/donation">Donation</a></li>
       </ul>
 
-      <div className="auth-buttons">
-        <button className="login-btn">Log in</button>
-        <button className="signup-btn">Sign up</button>
+      <div className="button-container">
+        <button className="button login-btn">Log in</button>
+        <button className="button signup-btn">Sign up</button>
       </div>
     </nav>
   );
