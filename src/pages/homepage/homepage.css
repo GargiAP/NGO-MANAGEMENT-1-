@@ -55,30 +55,39 @@ body {
   color: black;
   cursor: pointer;
   transition: 0.3s;
+  margin: 30px 0; 
+
 }
 
 .get-started-btn:hover {
   background-color: #ddd;
 }
 
-/* NGO List */
-.ngo-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px;
-  flex-wrap: wrap;
+.ngo-list-slider {
+  width: 90%; /* Make it responsive */
+  margin: 0 auto; /* Center it */
+  padding: 20px 0;
 }
 
-/* NGO Box */
 .ngo-box {
-  width: 150px;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  padding: 20px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
   height: 150px;
-  background: lightgray;
   display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 5px;
-  font-size: 0.9rem;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
   text-align: center;
+}
+
+/* Optional hover effect */
+.ngo-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #e0f7ff, #ffffff);
 }
