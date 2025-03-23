@@ -3,7 +3,14 @@ import Navbar from '../../components/navbar/Navbar';
 import './homepage.css';
 
 const HomePage = () => {
-  const ngos = ['NGO 1', 'NGO 2', 'NGO 3', 'NGO 4', 'NGO 5'];
+  const ngos = [
+    { name: 'HungerHope', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAiUn7zarjh91rmn-bbEDmb3FD2BhU4Ab_-w&s' },
+    { name: 'ElderNest', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSVqMISB0NdZkjRWqLrPJph5BP74O2lg10D7l9bKAXNzFcIl9MVxXXF3UfGKPiGOrNtRg&usqp=CAU' },
+    { name: 'SheRise', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoszObMs9cof_vqH-xMtlyXWQUVxQ01zgaTw&s' },
+    { name: 'PawSafe', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8SJzfyz7l9DuVF_h1YHQ1EVhO5lgkHaZrEA&s' },
+    { name: 'BrightSteps', image: 'https://www.sharanalayam.org/wp-content/uploads/2024/01/banner1.jpg' }
+  ];
+  
 
   return (
     <div>
@@ -23,16 +30,20 @@ const HomePage = () => {
 
         <button className="get-started-btn">Get Started</button>
 
-        {/* 🔄 Updated NGO Scrolling Section */}
+        {}
         <div className="scroll-container">
-          <div className="scroll-content">
-            {ngos.concat(ngos).map((ngo, index) => (
-              <div className="ngo-box" key={index}>
-                {ngo}
-              </div>
-            ))}
-          </div>
-        </div>
+  <div className="scroll-content">
+    {ngos.concat(ngos).map((ngo, index) => (
+      <div className="ngo-box" key={index}>
+        <img src={ngo.image} alt={ngo.name} className="ngo-image" />
+        <p>{ngo.name}</p>
+      </div>
+    ))}
+  </div>
+  
+</div>
+
+
       </section>
     </div>
   );
