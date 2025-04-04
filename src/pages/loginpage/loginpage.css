@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #00D9FF 0%, #03417F 100%);
+}
+
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.login-left, .login-right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login-left {
+  background-color: lightblue;
+  padding: 40px;
+}
+
+.login-right {
+  background: url('https://via.placeholder.com/600') no-repeat center center;
+  background-size: cover;
+  color: white;
+}
+
+.login-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  margin-right: 10px;
+  color: #666;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.design-container {
+  text-align: center;
+}
+
+.design-container h2 {
+  margin: 10px 0;
+  font-size: 2rem;
+}
+
+.design-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.design-container img {
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
