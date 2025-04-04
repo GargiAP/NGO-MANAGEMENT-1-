@@ -2,7 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import logo from '../../logo.svg';  
 
-const Navbar = () => {
+const Navbar = ({ onLoginClick, onSigninClick }) => {
   return (
     <nav className="navbar">
       <div className="logo">
@@ -16,8 +16,9 @@ const Navbar = () => {
       </ul>
 
       <div className="button-container">
-        <button className="button login-btn">Log in</button>
-        <button className="button signup-btn">Sign up</button>
+      <button onClick={onLoginClick}>Login</button>
+        <button onClick={onSigninClick}>Sign In</button>
+
       </div>
     </nav>
   );
