@@ -16,8 +16,9 @@ const Navbar = ({ onLoginClick, onSigninClick }) => {
       </ul>
 
       <div className="button-container">
-      <button onClick={onLoginClick}>Login</button>
-        <button onClick={onSigninClick}>Sign In</button>
+      <button className="button login-btn" onClick={onLoginClick}>Login</button>
+<button className="button signup-btn" onClick={onSigninClick}>Sign In</button>
+
 
       </div>
     </nav>
