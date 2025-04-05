@@ -1,64 +1,68 @@
-import React from 'react';
-import { FaUser, FaLock, FaCalendarAlt , FaPhoneAlt, FaEnvelope, FaVenusMars, FaMapMarkerAlt } from 'react-icons/fa';
-import './signinpage.css';
+import React from "react";
+import "./signinpage.css";
+import {
+  FaUser,
+  FaEnvelope,
+  FaCalendarAlt,
+  FaPhoneAlt,
+  FaTransgender,
+  FaMapMarkerAlt,
+  FaLock,
+} from "react-icons/fa";
 
-const SigninPage = () => {
+function SigninPage() {
   return (
-    <div className="signin-wrapper">
-      <div className="signin-left">
-        <h1 className="signin-title">Create Your Profile</h1>
-        <form className="signin-form">
-        <div className="inline-container">
-          <div className="input-container">
-            <FaUser className="icon" />
-            <input type="text" placeholder="Username" required />
-          </div>
+    <div className="signin-container">
+      <div className="signin-card">
+        <h2>Sign Up</h2>
+
+        <div className="input-container">
+          <FaUser className="icon" />
+          <input type="text" placeholder="Username" />
+        </div>
+
+        <div className="input-container">
+          <FaEnvelope className="icon" />
+          <input type="email" placeholder="Email ID" />
+        </div>
+
+        <div className="row">
           <div className="input-container">
             <FaCalendarAlt className="icon" />
-            <input type="number" placeholder="Age" required />
+            <input type="number" placeholder="Age" />
           </div>
-          </div>
-          <div className="inline-container">
           <div className="input-container">
             <FaPhoneAlt className="icon" />
-            <input type="tel" placeholder="Contact No." required />
+            <input type="tel" placeholder="Contact No." />
           </div>
+        </div>
+
+        <div className="row">
           <div className="input-container">
-            <FaEnvelope className="icon" />
-            <input type="email" placeholder="Email Id." required />
-          </div>
-          </div>
-          <div className="inline-container">
-          <div className="input-container">
-            <FaVenusMars className="icon" />
-            <input type="text" placeholder="Gender" required />
+            <FaTransgender className="icon" />
+            <input type="text" placeholder="Gender" />
           </div>
           <div className="input-container">
             <FaMapMarkerAlt className="icon" />
-            <input type="text" placeholder="Address" required />
-        </div>
-        </div>
-        <div className="input-container full-width">
-             <FaLock className="icon" />
-            <input type="password" placeholder="Set Password" required />
+            <input type="text" placeholder="Address" />
+          </div>
         </div>
 
-        <div className="input-container full-width">
+        <div className="row">
+          <div className="input-container">
             <FaLock className="icon" />
-            <input type="password" placeholder="Confirm Password" required />
+            <input type="password" placeholder="Set Password" />
+          </div>
+          <div className="input-container">
+            <FaLock className="icon" />
+            <input type="password" placeholder="Confirm Password" />
+          </div>
         </div>
-          <button type="submit">Create Account</button>
-        </form>
-      </div>
-      <div className="login-right">
-        <div className="design-container">
-          <h2>Explore More</h2>
-          <p>Stay connected with our community.</p>
-          <img src="https://via.placeholder.com/300" alt="Random Design" />
-        </div>
+
+        <button className="signup-button">Sign Up</button>
       </div>
     </div>
   );
-};
+}
 
 export default SigninPage;
