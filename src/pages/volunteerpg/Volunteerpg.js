@@ -1,38 +1,99 @@
 import React from 'react';
-import { FaUser, FaEnvelope, FaHandsHelping } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import './volunteer.css';
+import Navbar from '../../components/navbar/Navbar';
+import './volunteerpg.css';
 
-const VolunteerPage = () => {
+function volunteerpg() {
+  const blogPosts = [
+    {
+      id: 1,
+      title: 'HungerHope',
+      description: 'HungerHope is a dedicated NGO committed to eradicating hunger by providing nutritious meals to those in need. We strive to bring hope and dignity to every life we touch through the power of food.',
+      venue: 'Pune',
+      date: 'April 24, 2025',
+      time: '11:00 a.m',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAiUn7zarjh91rmn-bbEDmb3FD2BhU4Ab_-w&s',
+    },
+    {
+      id: 2,
+      title: 'PawSafe',
+      description: 'EduBridge focuses on bridging the education gap by offering quality learning resources, mentorship, and infrastructure support to underprivileged students across India.',
+      venue: 'Pune',
+      date: 'May 3, 2025',
+      time: '10:00 a.m',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8SJzfyz7l9DuVF_h1YHQ1EVhO5lgkHaZrEA&s',
+    },
+    {
+      id: 3,
+      title: 'Fly high',
+      description: 'GreenFuture is an environmental NGO working on reforestation and awareness campaigns to ensure a greener, sustainable future for the next generation.',
+      venue: 'Bangalore',
+      date: 'June 15, 2025',
+      time: '9:30 a.m',
+      image: 'https://www.aahwahan.com/Ngo-for-education-aahwahan.jpg',
+    },
+    {
+      id: 4,
+      title: 'BrightSteps',
+      description: 'HealthFirst provides essential medical support and health education to remote and underserved communities through mobile clinics and awareness drives.',
+      venue: 'Hyderabad',
+      date: 'July 10, 2025',
+      time: '2:00 p.m',
+      image: 'https://www.sharanalayam.org/wp-content/uploads/2024/01/banner1.jpg',
+    },
+    {
+      id: 5,
+      title: 'SheRise',
+      description: 'ShelterAid supports homeless families by offering temporary shelters, job assistance, and reintegration programs to rebuild their lives.',
+      venue: 'Mumbai',
+      date: 'August 20, 2025',
+      time: '4:00 p.m',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoszObMs9cof_vqH-xMtlyXWQUVxQ01zgaTw&s',
+    },
+    {
+      id: 6,
+      title: 'ElderNest',
+      description: 'HealthFirst provides essential medical support and health education to remote and underserved communities through mobile clinics and awareness drives.',
+      venue: 'Hyderabad',
+      date: 'July 10, 2025',
+      time: '2:00 p.m',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSVqMISB0NdZkjRWqLrPJph5BP74O2lg10D7l9bKAXNzFcIl9MVxXXF3UfGKPiGOrNtRg&usqp=CAU',
+    },
+  ];
+  const ngos = [
+    { name: 'HungerHope', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAiUn7zarjh91rmn-bbEDmb3FD2BhU4Ab_-w&s' },
+    { name: 'ElderNest', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSVqMISB0NdZkjRWqLrPJph5BP74O2lg10D7l9bKAXNzFcIl9MVxXXF3UfGKPiGOrNtRg&usqp=CAU' },
+    { name: 'SheRise', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoszObMs9cof_vqH-xMtlyXWQUVxQ01zgaTw&s' },
+    { name: 'PawSafe', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8SJzfyz7l9DuVF_h1YHQ1EVhO5lgkHaZrEA&s' },
+    { name: 'BrightSteps', image: 'https://www.sharanalayam.org/wp-content/uploads/2024/01/banner1.jpg' }
+  ];
+  
+
   return (
-    <div className="login-wrapper">
-      <form className="login-card">
-        <h1 className="login-title">Volunteer Form</h1>
-
-        <div className="flex-input-group">
-          <div className="input-container">
-            <FaUser className="icon" />
-            <input type="text" placeholder="Full Name" required />
-          </div>
-          <div className="input-container">
-            <FaEnvelope className="icon" />
-            <input type="email" placeholder="Email Address" required />
-          </div>
-          <div className="input-container">
-            <FaHandsHelping className="icon" />
-            <input type="text" placeholder="Area of Interest" required />
-          </div>
+    <div>
+      <Navbar />
+      <div className="login-wrapper">
+        <div className="blog-grid">
+          {blogPosts.map((post) => (
+            <div key={post.id} className="login-card">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="blog-image"
+              />
+              <h2 className="login-title">{post.title}</h2>
+              <p>{post.description}</p>
+              <p><strong>Venue:</strong> {post.venue}</p>
+              <div className="date-time">
+                <p><strong>Date:</strong> {post.date}   | 
+                <strong>      Time:</strong> {post.time}</p>
+              </div>
+              <button className="register-btn">Register Now</button>
+            </div>
+          ))}
         </div>
-
-        <button className="login-button" type="submit">Submit</button>
-        <div className="login-subtext">
-          <p>Want to login instead?</p>
-          <Link to="/login" className="create-account">Go to Login</Link>
-        </div>
-
-      </form>
+      </div>
     </div>
   );
-};
+}
 
-export default VolunteerPage;
+export default volunteerpg;
