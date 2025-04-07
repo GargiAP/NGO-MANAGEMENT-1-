@@ -1,38 +1,62 @@
-import React from 'react';
-import { FaUser, FaEnvelope, FaHandsHelping } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import './volunteer.css';
+import React from "react";
+import "./volunteer.css";
+import {
+  FaUser,
+  FaEnvelope,
+  FaCalendarAlt,
+  FaPhoneAlt,
+  FaTransgender,
+  FaMapMarkerAlt,
+  FaStethoscope,
+} from "react-icons/fa";
 
-const VolunteerPage = () => {
+const VolunteerForm = () => {
   return (
-    <div className="login-wrapper">
-      <form className="login-card">
-        <h1 className="login-title">Volunteer Form</h1>
+    <div className="volunteer-wrapper">
+      <div className="volunteer-card">
+        <h2>Volunteer</h2>
 
-        <div className="flex-input-group">
+        <div className="input-container">
+          <FaUser className="icon" />
+          <input type="text" placeholder="Username" />
+        </div>
+
+        <div className="input-container">
+          <FaEnvelope className="icon" />
+          <input type="email" placeholder="Email ID" />
+        </div>
+
+        <div className="row">
           <div className="input-container">
-            <FaUser className="icon" />
-            <input type="text" placeholder="Full Name" required />
+            <FaCalendarAlt className="icon" />
+            <input type="number" placeholder="Age" />
           </div>
           <div className="input-container">
-            <FaEnvelope className="icon" />
-            <input type="email" placeholder="Email Address" required />
-          </div>
-          <div className="input-container">
-            <FaHandsHelping className="icon" />
-            <input type="text" placeholder="Area of Interest" required />
+            <FaPhoneAlt className="icon" />
+            <input type="tel" placeholder="Contact No." />
           </div>
         </div>
 
-        <button className="login-button" type="submit">Submit</button>
-        <div className="login-subtext">
-          <p>Want to login instead?</p>
-          <Link to="/login" className="create-account">Go to Login</Link>
+        <div className="row">
+          <div className="input-container">
+            <FaTransgender className="icon" />
+            <input type="text" placeholder="Gender" />
+          </div>
+          <div className="input-container">
+            <FaMapMarkerAlt className="icon" />
+            <input type="text" placeholder="Address" />
+          </div>
         </div>
 
-      </form>
+        <div className="input-container">
+          <FaStethoscope className="icon" />
+          <input type="text" placeholder="Medical Conditions (if any)" />
+        </div>
+
+        <button className="volunteer-button">Volunteer</button>
+      </div>
     </div>
   );
 };
 
-export default VolunteerPage;
+export default VolunteerForm;
