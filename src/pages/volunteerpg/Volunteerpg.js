@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import './volunteerpg.css';
+import VolunteerForm from './volunteerform';
 
-function volunteerpg() {
+function Volunteerpg() {
+
+  const [showForm, setShowForm] = useState(false);
+
   const blogPosts = [
     {
       id: 1,
@@ -87,13 +91,28 @@ function volunteerpg() {
                 <p><strong>Date:</strong> {post.date}   | 
                 <strong>      Time:</strong> {post.time}</p>
               </div>
-              <button className="register-btn">Register Now</button>
+              <button className="register-btn" onClick={() => setShowForm(true)}>Register Now</button>
+
+
             </div>
+            
+
           ))}
+           {}
+     
         </div>
+        
       </div>
+      {showForm && (
+        <div className="modal-overlay" onClick={() => setShowForm(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <VolunteerForm />
+            <span className="close-icon" onClick={() => setShowForm(false)}>&times;</span>
+            </div>
+        </div>
+      )}
     </div>
   );
 }
 
-export default volunteerpg;
+export default Volunteerpg;
