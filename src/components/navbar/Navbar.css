@@ -5,7 +5,7 @@
     background-color:rgba(26, 26, 26, 0.7);
     padding: 15px 30px;
     backdrop-filter: blur(10px); 
-    //color: white;
+    color: white;
     position: sticky;
     top: 0;
     z-index: 100;
