@@ -3,11 +3,11 @@ import "./volunteer.css";
 import {
   FaUser,
   FaEnvelope,
-  FaCalendarAlt,
+  FaMapMarkedAlt,
   FaPhoneAlt,
-  FaTransgender,
+  FaClock,
   FaMapMarkerAlt,
-  FaStethoscope,
+  FaCalendarAlt,
 } from "react-icons/fa";
 
 const EventForm = () => {
@@ -18,18 +18,18 @@ const EventForm = () => {
 
         <div className="input-container">
           <FaUser className="icon" />
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="NGO Name" />
         </div>
 
         <div className="input-container">
           <FaEnvelope className="icon" />
-          <input type="email" placeholder="Email ID" />
+          <input type="text" placeholder="Description" />
         </div>
 
         <div className="row">
           <div className="input-container">
-            <FaCalendarAlt className="icon" />
-            <input type="number" placeholder="Age" />
+            <FaMapMarkedAlt className="icon" />
+            <input type="text" placeholder="Venue" />
           </div>
           <div className="input-container">
             <FaPhoneAlt className="icon" />
@@ -39,18 +39,13 @@ const EventForm = () => {
 
         <div className="row">
           <div className="input-container">
-            <FaTransgender className="icon" />
-            <input type="text" placeholder="Gender" />
+            <FaCalendarAlt className="icon" />
+            <input type="date" placeholder="Date" />
           </div>
           <div className="input-container">
-            <FaMapMarkerAlt className="icon" />
-            <input type="text" placeholder="Address" />
+            <FaClock className="icon" />
+            <input type="time" placeholder="Time" />
           </div>
-        </div>
-
-        <div className="input-container">
-          <FaStethoscope className="icon" />
-          <input type="text" placeholder="Medical Conditions (if any)" />
         </div>
 
         <button className="volunteer-button">Volunteer</button>
