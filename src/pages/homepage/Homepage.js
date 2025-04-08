@@ -1,7 +1,7 @@
 import React,{useState} from  'react';
 import Navbar from '../../components/navbar/Navbar';
 import LoginPage from '../loginpage/Loginpage';
-import SigninPage from '../signinpage/Signinpage';
+import PopupSignUpPage from '../signinpage/popupsignin';
 
 import './homepage.css';
 
@@ -26,8 +26,6 @@ const HomePage = () => {
   onSigninClick={() => setShowSignin(true)}
 />
      
-
-
       <section className="home-container">
         <h1>Give. Help. Impact</h1>
 
@@ -41,7 +39,7 @@ const HomePage = () => {
         </div>
 
 
-        <button className="get-started-btn">Get Started</button>
+       
 
         {}
         <div className="scroll-container">
@@ -64,17 +62,15 @@ const HomePage = () => {
         </div>
       )}
 
-      {/* Signin Modal */}
-      {showSignin && (
-        <div className="modal">
-          <div className="modal-content">
-            <button className="close" onClick={() => setShowSignin(false)}>X</button>
-            <SigninPage />
-          </div>
-        </div>
-      )}
-
-
+     {/* Signin Modal */}
+{showSignin && (
+  <div className="modal">
+    <div className="modal-content">
+      <button className="close" onClick={() => setShowSignin(false)}>X</button> {/* optional */}
+      <PopupSignUpPage onClose={() => setShowSignin(false)} /> {/* ← pass it here */}
+    </div>
+  </div>
+)}
 
 
       </section>
