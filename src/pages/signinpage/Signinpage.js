@@ -9,11 +9,21 @@ import {
   FaMapMarkerAlt,
   FaLock,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function SigninPage() {
+  const navigate = useNavigate();
+
+  const handleClose = () => {
+    navigate("/");
+  };
+
   return (
     <div className="signin-container">
       <div className="signin-card">
+        {/* Close Button */}
+        <button className="popup-close" onClick={handleClose}>×</button>
+
         <h2>Sign Up</h2>
 
         <div className="input-container">
