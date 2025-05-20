@@ -88,6 +88,14 @@
     font-size: 14px;
     color: #333;
   }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
   
   .create-account {
     font-weight: bold;
