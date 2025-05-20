@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaUser, FaLock } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 import './loginpage.css';
 
 const LoginPage = () => {
@@ -21,11 +23,11 @@ const LoginPage = () => {
         </div>
 
         <button className="login-button" type="submit">Login</button>
-
         <div className="login-subtext">
           <p>Don’t have an account?</p>
-          <p className="create-account">Create Account</p>
+           <Link to="/signin" className="create-account">Create Account</Link>
         </div>
+
       </form>
     </div>
   );
