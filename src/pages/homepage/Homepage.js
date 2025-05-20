@@ -1,6 +1,11 @@
 import React from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import './homepage.css'; // Import CSS file
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper/modules';
+
 
 const HomePage = () => {
   return (
@@ -17,15 +22,28 @@ const HomePage = () => {
 </div>
 
         <button className="get-started-btn">Get Started</button>
-     
 
-     <div className="ngo-list">
-        <div className="ngo-box">NGO 1</div>
-        <div className="ngo-box">NGO 2</div>
-        <div className="ngo-box">NGO 3</div>
-        <div className="ngo-box">NGO 4</div>
-        <div className="ngo-box">NGO 5</div>
+
+      <div className="ngo-list-slider">
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+          modules={[Pagination,Autoplay]}
+        >
+          <SwiperSlide><div className="ngo-box">NGO 1</div></SwiperSlide>
+          <SwiperSlide><div className="ngo-box">NGO 2</div></SwiperSlide>
+          <SwiperSlide><div className="ngo-box">NGO 3</div></SwiperSlide>
+          <SwiperSlide><div className="ngo-box">NGO 4</div></SwiperSlide>
+          <SwiperSlide><div className="ngo-box">NGO 5</div></SwiperSlide>
+        </Swiper>
       </div>
+
       </section>
     </div>
   );
