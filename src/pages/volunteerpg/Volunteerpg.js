@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import './volunteerpg.css';
 import VolunteerForm from './volunteerform';
+import EventForm from './eventregister';
 
 function Volunteerpg() {
 
   const [showForm, setShowForm] = useState(false);
+  const [showEventForm, setShowEventForm] = useState(false);
 
   const blogPosts = [
     {
@@ -76,6 +78,11 @@ function Volunteerpg() {
     <div>
       <Navbar />
       <div className="login-wrapper">
+      <h2 className="page-title">Lists of NGO Events</h2>
+      <button className="register-main-btn" onClick={() => setShowEventForm(true)}>
+      Register Event
+      </button>
+
         <div className="blog-grid">
           {blogPosts.map((post) => (
             <div key={post.id} className="login-card">
@@ -109,6 +116,15 @@ function Volunteerpg() {
             <VolunteerForm />
             <span className="close-icon" onClick={() => setShowForm(false)}>&times;</span>
             </div>
+        </div>
+      )}
+      {/* Event Modal */}
+      {showEventForm && (
+        <div className="modal-overlay" onClick={() => setShowEventForm(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <EventForm />
+            <span className="close-icon" onClick={() => setShowEventForm(false)}>&times;</span>
+          </div>
         </div>
       )}
     </div>
